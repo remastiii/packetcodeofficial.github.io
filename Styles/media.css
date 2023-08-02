@@ -1,0 +1,264 @@
+@charset "UTF-8";
+@media screen and (max-width: 800px) {
+  header {
+    padding: 0;
+  }
+  header .right-header {
+    padding: 2rem !important;
+  }
+}
+@media screen and (max-width: 800px) and (max-width: 800px) {
+  .controls {
+    position: absolute;
+    flex-direction: row !important;
+    bottom: 0;
+    top: unset;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    padding: 1rem;
+    margin-top: 28rem;
+  }
+  .theme-btn {
+    width: 50px !important;
+    height: 50px !important;
+  }
+  .header-content {
+    grid-template-columns: 1fr !important;
+    padding-bottom: 10rem !important;
+  }
+  .left-header .h-shape {
+    display: none;
+  }
+  .right-header {
+    grid-row: 1;
+    width: 90%;
+    margin: 0 auto;
+  }
+  .header-content .left-header .image img {
+    position: relative !important;
+    height: 300px;
+  }
+  .control {
+    width: 45px !important;
+    height: 45px !important;
+  }
+  .control i {
+    font-size: 1rem !important;
+  }
+}
+@media screen and (max-width: 800px) {
+  .left-header {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .image {
+    width: 100%;
+    height: 300px;
+    margin-left: 0;
+    position: relative !important;
+    border-radius: 20px;
+    margin-bottom: 3rem !important;
+    margin-right: 4rem;
+  }
+  .image img {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 3rem !important;
+    box-shadow: 2px 4px 8px rgba(8, 2, 2, 0.1);
+  }
+}
+@media (max-width: 400px) {
+  .controls {
+    margin-top: 20rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main-title h2 {
+    font-size: 28px;
+  }
+}
+/* Responzivan stil za malu širinu ekrana za abouth me*/
+@media screen and (max-width: 600px) {
+  .abouth-container {
+    grid-template-columns: 1fr;
+  }
+  .main-title h2 {
+    font-size: 24px;
+  }
+  .abouth {
+    font-size: 16px;
+    padding: 10px;
+  }
+  .main-title .bg-text {
+    display: none;
+  }
+  .about-item {
+    grid-template-columns: 1fr;
+  }
+  .timeline {
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+}
+@media screen and (max-width: 1176px) {
+  .bg-text {
+    display: none;
+  }
+}
+@media screen and (max-width: 1176px) {
+  .abouth-container {
+    flex-direction: column; /* Promena rasporeda elemenata na vertikalni (jedan ispod drugog) na malim uređajima */
+    align-items: center; /* Centriramo sadržaj u sekciji */
+    text-align: center;
+  }
+  .abouth-container .btn-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .abouth-container .left-abouth {
+    flex-basis: 100%; /* Pun širina ekrana za sadržaj na malim uređajima */
+    margin-bottom: 20px; /* Dodajemo razmak ispod sadržaja */
+    padding-bottom: 0; /* Uklanjamo padding ispod sadržaja */
+  }
+  .abouth-container .theme-btn {
+    position: absolute;
+    top: 12%;
+  }
+  .abouth-container .right-abouth {
+    flex-basis: 100%; /* Pun širina ekrana za sadržaj na malim uređajima */
+  }
+  .abouth-container .about-item {
+    grid-template-columns: repeat(1, 1fr); /* Postavljamo jedan stupac za kockice na malim uređajima */
+  }
+  .abouth-container .abt-text {
+    text-align: center; /* Centriramo tekst unutar kockica na malim uređajima */
+  }
+  /* Responzivan stil za malu širinu ekrana */
+}
+@media screen and (max-width: 1176px) and (max-width: 800px) {
+  .progress-bars {
+    display: flex;
+    flex-direction: column;
+  }
+  .progress-bar {
+    margin-bottom: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+}
+@media screen and (max-width: 1176px) and (max-width: 800px) {
+  .timeline-containers {
+    display: flex;
+    flex-direction: column;
+  }
+  .timeline-container {
+    margin-bottom: 20px;
+  }
+  .section {
+    padding: 2rem 2.5rem;
+  }
+  .btn-con {
+    margin-right: 3rem !important;
+  }
+}
+@media screen and (max-width: 600px) {
+  .portfolio .main-title h2 {
+    font-size: 1.8rem;
+  }
+}
+.portfolio .main-title h2 {
+  text-align: center;
+}
+
+.portfolio .main-title .port-text {
+  margin: 0 auto;
+  font-size: 1.2rem;
+}
+
+@media screen and (max-width: 400px) {
+  .portfolio .main-title .port-text {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-container {
+    grid-template-columns: 1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  .main-title h2 {
+    font-size: 1.8rem;
+  }
+  .main-paragraf p {
+    font-size: 1rem;
+  }
+}
+@media screen and (max-width: 600px) {
+  .custom-hr {
+    margin: 1rem auto;
+  }
+}
+@media screen and (max-width: 600px) {
+  .contact-all {
+    flex-direction: column !important; /* Postavljanje da elementi budu prikazani jedan ispod drugog */
+  }
+  .contact-left,
+  .contact-right {
+    flex-direction: column-reverse !important;
+    flex: initial; /* Opoziva prethodni stil flex-a za kontakt-levo i kontakt-desno */
+    width: 100%; /* Postavljanje širine na 100% kako bi zauzimali punu širinu ekrana */
+  }
+}
+/* Medijalni upit za ekrane manje od 600 piksela */
+@media screen and (max-width: 600px) {
+  /* Sakrij Font Awesome ikonice na malim ekranima */
+  .list-div i[class^=fa-] {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  /* Smanjite veličinu .main-btn na malim ekranima */
+  .main-btn {
+    font-size: 14px; /* Postavite manju veličinu fonta */
+    padding: 8px 16px; /* Postavite manji padding */
+  }
+}
+@media screen and (max-width: 600px) {
+  .right-list li {
+    margin: 0;
+  }
+  .right-list p {
+    margin: 0 !important;
+    padding: 0;
+  }
+}
+@media screen and (max-width: 600px) {
+  .right-list p i[class^=fas-] {
+    display: none !important;
+  }
+  .right-list li .icon-p i[class^=fa-] {
+    display: none;
+  }
+}
+@media screen and (max-width: 600px) {
+  .right-list li p i[class^=fas-] {
+    display: none;
+  }
+  .right-list {
+    margin-top: 3.6rem;
+    margin-left: 5rem;
+  }
+  .timeline {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem;
+  }
+}/*# sourceMappingURL=media.css.map */

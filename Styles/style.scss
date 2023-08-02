@@ -1,0 +1,1032 @@
+
+* {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    list-style: none;
+}
+// for variables
+:root {
+    --color-primary: #191d2b;
+    --color-green: #00ff00;
+    --color-black: #000000;
+    --color-white: #ffffff;
+    --color-gray-1: #f5f5f5;
+    --color-gray-2: #e0e0e0;
+    --color-gray-3: #c7c7c7;
+    --color-gray-4: #a8a8a8;
+    --color-gray-5: #8c8c8c;
+    --color-gray-6: #707070;
+    --color-gray-7: #555555;
+    --br-sm-2:14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.2);
+}
+.light-mode {
+  --color-primary: #ffcbcb;
+    --color-green: #b528f7;
+    --color-black: #969696;
+    --color-white: #454e56;
+    --color-gray-1: #444242;
+    --color-gray-2: #5c5959;
+    --color-gray-3: #6d6b6b;
+    --color-gray-4: #a8a8a8;
+    --color-gray-5: #504a4a;
+    --color-gray-6: #707070;
+    --color-gray-7: #555555;
+    --br-sm-2:14px;
+    --box-shadow-1: 0 3px 15px rgba(0,0,0,.2);
+}
+
+body {
+    background-color: var(--color-primary);
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1rem;
+    color: var(--color-white);
+    transition: all .4s ease-in-out;
+    
+}
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+}
+header{
+    height: 100vh;
+    color: var(--color-white);
+    
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 3rem 18rem;
+}
+section {
+    transform: translateY(-100%);
+    transition: all 0.4s ease-in-out;
+    background-color: var(--color-primary);
+}
+.sec1{
+    display: none;
+    transform: translateY(0) scale(1);
+   
+}
+.sec2{
+    display: none;
+    transform: translateY(0) scale(1);
+    
+}
+.sec3{
+    display: none;
+    transform: translateY(0) scale(1);
+    
+}
+.sec4{
+    display: none;
+    transform: translateY(0) scale(1);
+    
+}
+.sec5{
+    display: none;
+    transform: translateY(0) scale(1);
+    
+}
+.image img {
+height: 400px;
+   border-radius: var(--br-sm-2);
+
+}
+.active {
+    display: block;
+    animation: scaleAmin 1s ease-in-out;
+    @keyframes scaleAmin {
+    0%{
+        transform:translateY(-100%) scaleY(0)
+    }
+    100%{
+        transform: translateY(0%) scaleY(1);
+    }
+        
+    }
+}
+
+/* Stil kontejnera koji centriraju horizontalnu liniju */
+.hr-container {
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* Stil prilagođene horizontalne linije */
+  .custom-hr {
+    border: none; 
+    height: 0.3px; 
+    background-color: #444444;
+    width: 50%; /* Širina linije, u ovom slučaju 40% od širine roditeljskog kontejnera */
+    margin-bottom: 6rem;
+    margin-top: 4rem;
+  }
+   
+// controls 
+.controls {
+    position: fixed;
+    z-index: 10;
+    top: 50%;
+    right: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    transform: translateY(-50%);
+    .active-btn {
+        background-color: var(--color-green) !important;
+        transition: all 0.4s ease-in-out; 
+        i{
+            color: var(--color-white) !important;
+        }
+
+    }
+    .control {
+        padding: 1rem;
+        cursor: pointer;
+        background-color: var(--color-gray-4);
+        border-radius: 50%;
+        display: flex;
+        width: 55px;
+        height: 55px;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        box-shadow: var(--box-shadow-1);
+        i { 
+            font-size: 1.2rem;
+            color: var(--color-gray-2);
+            pointer-events: none;
+
+         }
+
+
+        }
+}
+.theme-btn {
+  top: 5%;
+  right: 3%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-gray-4);
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0,0,0,.3);
+  transition: all .1s ease-in-out;
+  &:active{
+    transform: translate(-5px);
+  }
+  i {
+    padding:1.4rem;
+    color: var(--color-gray-2);
+    pointer-events: none;
+  }
+
+}
+
+/* header content */ 
+.header-content {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    height: 100%;
+    color: var(--color-gray-1);
+
+    .left-header {
+        display: flex;
+        align-items: center;
+        position: relative;
+        .h-shape {
+            transition: all .4s ease-in-out;
+            width: 65%;
+            height: 100%;
+            background-color: var(--color-green);
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            clip-path: polygon(0 0, 46% 0,79% 100%,0% 100%);
+        }
+        .image {
+            display: flex;
+            flex: 1;
+            justify-content: center;
+            position: absolute;
+            height: 90%;
+            width: 68%;
+            margin-left: 4rem;
+            background-color: var(--color-black);
+            transition:  all .4s ease-in-out;
+            border-radius: 20px;
+            img {
+                border-radius: 20px;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition:  all .4s ease-in-out;
+                filter: grayscale(100%);
+                &:hover {
+                    filter: grayscale(0);
+                }
+
+            }
+        }
+
+    }
+}
+.right-header {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    padding-right: 18rem;
+    align-items: left;
+    color: var(--color-gray-5);
+    .name {
+        font-size: 3rem;
+        span {
+            color: var( --color-green);
+        };
+    }
+    p {
+        margin: 1.5rem 0;
+        line-height: 3rem;
+        align-items: left;
+        color: var(--color-gray-1);
+
+    }
+
+}
+// #nameSpan {
+//     color: rgb(96, 207, 235);
+// }
+.btn-con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .main-btn {
+    border-radius: 30px;
+    color: inherit;
+    font-weight: 600;
+    position: relative;
+    border: 1px solid var(--color-green);
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    text-decoration: none;
+    padding: 0.5rem 2rem;
+  }
+  
+  .main-btn:hover {
+    color: var(--color-white);
+  }
+  
+  .main-btn .btn-text {
+    padding: 2 1rem;
+    z-index: 1;
+    margin-right: 20px;
+   
+  }
+  .btn-text2 {
+    padding: 2 1rem;
+    z-index: 1;
+    margin-right: 60px;
+  }
+  
+  .main-btn .btn-icon {
+    position: absolute;
+    padding: 0.5rem;
+    border-radius: 50%;
+    background-color: var(--color-green);
+    color: #f5f5f5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    right: -1px;
+    z-index: 4;
+    border-color: var(--color-green);
+    border-radius: 30px;
+    
+  }
+  
+  .main-btn .btn-icon i {
+    
+    font-size: 1.5rem;
+    color: var(--color-white)
+  }
+    
+
+  
+  .main-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: var(--color-green);
+    transition: width 0.4s ease-in-out;
+    z-index: -1;
+  }
+  
+  .main-btn:hover::before {
+    width: 100%;
+  }
+  
+
+
+.main-title {
+  text-align: center;
+}
+.btn-small-text {
+    font-size: 0.5rem;
+}
+
+.main-title h2 {
+  color: var(--color-green);
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.main-title h2 span {
+  color: var(--color-green);
+}
+
+.main-title h2 .bg-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-gray-6);
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+  font-weight: 800;
+  font-size: 6.3rem;
+}
+
+
+ 
+/* About */
+
+
+.abouth-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+    padding: 20px 0;
+.left-abouth {
+    flex-basis: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-bottom: 20px;
+    h4 {
+        font-size: 3rem;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        margin-right: 3rem;
+
+        text-transform: uppercase;
+    }
+    p {
+        font-family: inherit;
+        font-size: 1.5rem;
+        color: var(--color-gray-1);
+
+    }
+    .btn-con {
+        margin-top: 3rem;
+        align-items: start;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
+}
+
+  
+.right-abouth {
+    flex-basis: 48%;
+}
+.about-item {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    transition: all 0.7s ease;
+    cursor:cell;
+}
+  
+.abt-text {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-primary) ;
+    padding: 20px;
+    border: 1px solid rgb(90, 90, 90);
+    border-radius: 0px;
+    transition: all .1s ease;
+    transform: translateY(0); /* Dodano svojstvo za početni položaj */
+    .large-text {
+        text-transform: uppercase;
+        font-size: 5rem;
+        font-weight: bold;
+        text-align: left;
+        color: var(--color-green);
+        padding-left: 3rem;
+    
+    }
+    .small-text {
+        position: relative;
+        padding-left: 3rem;
+        font-size: 1.2rem;
+        margin-top: 10px;
+        color: var(--color-gray-5);
+        letter-spacing: 2px;
+    &::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 15px;
+        width: 2rem;
+        height: 2px;
+        background-color: var(--color-green);
+    }
+}
+}
+.abt-text:hover {
+    border: solid var(--color-green);
+    border-width: 1px; /* Postavite željenu debljinu okvira */
+    transform: translateY(-2px);
+}
+
+}
+/* progress bars */
+.about-stats{
+    padding-bottom: 4rem;
+    .stat-title {
+        text-align: center;
+        margin-bottom: 5rem;
+        text-transform: uppercase;
+        font-size: large;
+        font-size: 2rem;
+        color: var(--color-gray-3);
+    }
+    .progress-bars {
+        display: grid;
+        grid-template-columns:  repeat(2,1fr);
+        grid-gap: 2rem;
+        .progress-bar {
+            display: flex;
+            flex-direction: column; 
+        }
+        .prog-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+        .prog-container {
+            display: flex;
+            align-items: center;
+            .prog-text {
+                animation-delay: 0.5s;
+                color: var(--color-gray-3);
+            }
+            .progress {
+                width: 100%;
+                height: .45rem;
+                background-color: var(--color-gray-4);
+                margin-left: 1rem;
+                position: relative;
+                overflow: hidden;
+                span {
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    height: 100%;
+                    background-color: var(--color-green);
+                    width: 60%;
+                    animation-delay: 0.1s;
+                }
+                .html {
+                    width: 90% ;
+                }
+                .css3 {
+                    width: 85%;
+                }
+                .js{
+                    width: 70%;
+                }
+                .php {
+                    width: 65%;
+                }
+                .react {
+                    width: 30%;
+                }
+                .bootstrap {
+                    width: 88%;
+                }
+            }
+        }
+
+    }
+}
+@keyframes fillProgress {
+    0% {
+        width: 0;
+    }
+    /* Promijenite 100% u željenu vrijednost punjenja */
+    100% {
+        width: 60%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.progress span {
+    /* postojeći CSS kod */
+    animation: fillProgress 1s ease-out forwards;
+    /* Promijenite 1s u željeno vrijeme trajanja animacije */
+    width: 0;
+    /* Promijenite 0 u željenu početnu vrijednost punjenja */
+}
+
+.prog-text, .progress span {
+    animation: fadeIn 1s ease-in-out forwards;
+    /* Promijenite 1s u željeno vrijeme trajanja animacije */
+    opacity: 0;
+}
+
+/// timeline
+
+.timeline{
+    text-align: center;
+    color: #fff;
+    text-transform: uppercase;
+}
+#naslov {
+    text-align: center;
+    margin-bottom: 5rem;
+    text-transform: uppercase;
+    font-size: large;
+    font-size: 2rem;
+    color: var(--color-gray-3);
+}
+.timeline-containers {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+
+    .timeline-container {
+        margin-top: 20px;
+        position: relative;
+    }
+    .timeline-container-year {
+        text-align: start;
+        padding: .5rem 1rem;
+        background-color: #39404f;
+        border-radius: 6px;
+        display: inline-block;
+        top:0;
+        left: 0;
+        margin-bottom: 2rem;
+
+    }
+    .timeline-container-header {
+        text-align: center;
+        margin-bottom: 1.2rem;
+       
+    }
+    .timeline-container-decs {
+        color:#707070;
+    }
+
+
+}
+
+// Portfolios
+
+.port-text {
+    padding: 5rem 0;
+    text-align: center;
+}
+.portfolios {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centriranje po horizontali */
+  }
+  
+  .portfolio-item {
+    flex-basis: calc(33.33% - 20px);
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .portfolio-item .image img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .portfolio-item .hover-item {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 15px;
+    background-color: var();
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.4s ease-in-out;
+    background-color: var(--color-green);
+  }
+  
+  .portfolio-item:hover .hover-item {
+    opacity: 1;
+    transform: scale(1);
+  }
+  e
+  .portfolio-item .hover-item h3 {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Stilizacija ikonica */
+  .portfolio-item .hover-item .icons {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .portfolio-item .hover-item .icons a {
+    color: white;
+    font-size: 24px;
+    margin: 0 5px;
+  }
+  
+  /* Smanjivanje veličine ikonica */
+  .portfolio-item .hover-item .icons a i {
+    transform: scale(0.8);
+  }
+  
+  /* Povećavanje veličine ikonica prilikom hover-a */
+  .portfolio-item:hover .hover-item .icons a i {
+    transform: scale(1);
+  }
+  
+
+// blogs
+.main-title{
+    margin-bottom: 3rem;
+}
+.main-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .small-container {
+    position: relative;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    flex-basis: calc(33.33% - 20px);
+    margin: 15px;
+    align-items: center;
+    background-color: #696969;
+    border-radius: 4px;
+    color: #444444;
+    overflow: hidden;
+    transition: .3s ease-in;
+    
+    box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.8);
+  }
+  
+  .small-container .image-container {
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .small-container img {
+    filter: grayscale(100%);
+    transition: filter 0.2s ease-in-out;
+    max-width: 100%; 
+    height: auto;
+  }
+  
+  
+  .small-container:hover img {
+    filter: grayscale(0%); /* Ukloni sivu boju prilikom hover-a */
+  }
+  
+  .small-container:hover {
+    transform: scale(1.04);
+    cursor: pointer;
+  }
+  
+  h2 {
+    margin: 10px 0;
+    transition: .1s ease-in-out;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+  }
+  h2:hover {
+    color:var(--color-green);
+  }
+  
+  p {
+    margin: 10px 0;
+    color: #888888;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  
+  .small-container::before {
+    content: ""; /* Dodajemo pseudo-element ::before kako bismo kreirali liniju */
+    position: absolute;
+    bottom: 6rem;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    background-color: green; /* Postavite boju linije ovde (može biti bilo koja boja) */
+    transform: scaleX(0); /* Početno stanje linije je skala 0 (nevidljiva) */
+    transition: transform 0.4s ease-in-out; /* Dodajemo tranziciju za glatko prikazivanje linije */
+  }
+  
+  .small-container:hover::before {
+    transform: scaleX(1); /* Linija će biti vidljiva prilikom hover-a */
+  }
+  .main-paragraf p {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: #a8a8a8;
+    font-style: italic;
+  }
+
+  // contact
+
+  .head {
+    width: fit-content;
+  }
+
+  #white {
+    color:white;
+  }
+
+  .contact-all {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+
+    .contact-left-content {
+        
+        display: flex;
+        flex-direction: column;
+        h3 {
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        p {
+            color: var(--color-gray-1);
+            
+            
+        }
+        li{
+            margin-bottom: 4rem;
+        }
+        .paragrapf-div {
+            width: 80%;
+            
+          }
+        i {
+            padding: 1rem;
+        } 
+        .list-div {
+            max-width: 80%;
+            display: flex;
+            flex-direction: row;
+            justify-content:space-between;
+            
+        }
+        #upercase {
+            text-transform: uppercase;
+        } 
+        .right-list {
+            li{
+                display: flex;
+                flex-direction: column;
+                margin-bottom: 6%;
+                justify-content: end;
+            }
+        
+            p {
+                margin: 1.3rem;
+            }
+        }
+        #settings {
+            padding-top: -30px;
+        }
+    }
+
+    .contact-right-content {
+        display: flex;
+        flex-direction: column;
+    }
+  }
+  .contact-right {
+    margin-top: 3rem;
+    padding: 1rem;
+  }
+  
+  /* Oblikovanje cijelog obrasca */
+.contact-left-content form {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  /* Oblikovanje labele */
+  .contact-left-content form label {
+    flex-basis: 50%;
+    margin-bottom: 10px;
+    margin-top: 50px;
+  }
+  
+  /* Oblikovanje inputa za ime i email */
+  .contact-left-content form input[type="text"],
+  .contact-left-content form input[type="email"] {
+    flex-basis: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #3d3939;
+    border-radius: 5px;
+  }
+  
+  /* Oblikovanje inputa za unos teme */
+  .contact-left-content form input[type="text"]#subject {
+    flex-basis: 100%;
+  }
+  
+  /* Oblikovanje textarea za poruku */
+  .contact-left-content form textarea#message {
+    flex-basis: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    resize: none;
+    margin-top: 2rem;
+    background-color: var(--color-gray-7) !important;
+  }
+  
+  /* Promjena boje placeholdera na sivu */
+  .contact-left-content form input::placeholder,
+  .contact-left-content form textarea::placeholder {
+    
+    color: #999;
+  }
+  
+  /* Oblikovanje gumba za slanje obrasca */
+  .contact-left-content form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+ 
+  .contact-right input {
+    margin-bottom: 1rem;
+  }
+ 
+  .contact-left-content input {
+    margin-bottom: 1rem;
+  }
+  .contact-left-content form input[type="text"],
+.contact-left-content form input[type="email"],
+.contact-left-content form input[type="submit"] {
+  background-color:var(--color-gray-7); /* Postavite željenu boju pozadine */
+}
+.contact-left-content form input[type="text"],
+.contact-left-content form input[type="email"],
+.contact-left-content form input[type="submit"],
+.contact-left-content form textarea {
+  border: 1px solid #5e5d5d; /* Postavite željenu boju okvira */
+  border-radius: 5px; /* Dodajte zaobljeni rub (okvir) */
+}
+/* Promjena boje pozadine za textarea */
+.contact-left-content form textarea {
+    background-color: var(--color-gray-7)!important; /* Postavite željenu boju pozadine */
+  }
+  
+  /* Promjena boje ruba (okvira) za textarea */
+  .contact-left-content form textarea {
+    border: 1px solid #ccc !important; /* Postavite željenu boju okvira */
+    border-radius: 5px; /* Dodajte zaobljeni rub (okvir) */
+  }
+  .input-group1 {
+    color: var(--color-gray-1);
+    margin-bottom: 2rem;
+    margin-top: 1rem;
+    flex:1;
+    justify-content: space-around;
+  }
+ 
+  
+  .email-input {
+    justify-content: flex-end;
+    align-items: end;
+  }
+
+  #message {  
+    background-color: var(--color-gray-7);
+  }
+  .contact-right {
+    .btn-con {
+        margin-top: 2rem;
+    }
+  }
+  .social {
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    li a {
+        margin: 0 1rem;
+        border-radius: 50%;
+        padding: 1rem 1rem;
+        border: 2px solid var(--color-green);
+        color: rgb(255, 255, 255); /* Početna boja ikonice (crna) */
+        /* Početna boja pozadine (bijela) */
+        transition: background-color 0.3s, color 0.3s ease-in-out; /* Dodajemo prijelaz kako bi animacija bila glatka */
+       box-shadow: inherit;
+        
+    }
+  }
+  .social li a:hover {
+    background-color: var(--color-green); /* Promjena boje pozadine u zelenu prilikom hovera */
+    color: black; /* Početna boja ikonice (crna) */
+  }
+
+  /* Stil za grupu input polja */
+.input-group1 {
+    display: flex;
+    flex-grow: 1;
+    margin-bottom: 10px;
+    
+  }
+  
+  /* Stil za input elemente */
+  .input-group1 input {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    
+  }
+  
+  /* Stil za input za email */
+  .email-input {
+    justify-content: flex-end;
+  }
+  
+  // responsive 
+
+  @import url(/Styles/media.css);
